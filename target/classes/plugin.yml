@@ -3,3 +3,7 @@ main: com.gmail.gregrockss.GregCraft.Main
 version: 0.0.8
 author: Threebuddies
 description: CounterCraft Clone
+commands:  
+   GregCraft:
+      description: This will ignite a player
+      usage: /<command> [player]
