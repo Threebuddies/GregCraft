@@ -4,6 +4,6 @@ version: 0.0.8
 author: Threebuddies
 description: CounterCraft Clone
 commands:  
-   GregCraft:
-      description: This will ignite a player
-      usage: /<command> [player]
+  kit:
+    description: Your description
+    usage: /kit
