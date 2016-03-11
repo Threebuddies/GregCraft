@@ -1,9 +1,9 @@
 name: GregCraft
 main: com.gmail.gregrockss.GregCraft.Main
-version: 0.0.9
+version: 0.0.10
 author: Threebuddies
 description: CounterCraft Clone
 commands:  
   kit:
-    description: Your description
+    description: Give you 20 bricks and 3 diamonds
     usage: /kit
