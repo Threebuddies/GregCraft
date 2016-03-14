@@ -15,22 +15,20 @@ public class CommandKit implements CommandExecutor {
 		if (!(sender instanceof Player)) {
             sender.sendMessage(ChatColor.RED + "Only players can get kits!");
             return true;
-    }
+		}
 		
 		if (sender instanceof Player) {
 			Player player = (Player) sender;
-        
-			// Create a new ItemStack and sets the number of items 
+            // (Material.DIAMOND, 3); The "3" does the same as diamond.setAmount(3);
 			ItemStack diamond = new ItemStack(Material.DIAMOND, 3);
-			// Create a new ItemStack
 			ItemStack bricks = new ItemStack(Material.BRICK);
         
-			// Set the amount of the ItemStack
-    	   bricks.setAmount(20);
+    	    bricks.setAmount(20);
         
-    	   // Give the player our items (comma-seperated list of all ItemStack)
-    	   player.getInventory().addItem(bricks, diamond);
+    	    player.getInventory().addItem(bricks, diamond);
 		}
 		return true;
 	}
+	
+
 }
