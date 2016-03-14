@@ -7,6 +7,8 @@ https://www.justdave.net/dave/2015/05/04/how-to-write-a-minecraftbukkit-plugin-f
 Implemented:
 - Snowball grenades
 - Disallow block breaks
+- Hit sounds
+- Headshots
 
 TO DO
 - Keep health from regenerating (Set hunger -4)
