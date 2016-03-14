@@ -25,6 +25,7 @@ public class Main extends JavaPlugin implements Listener{
     public void onPlayerBreakBlock(BlockBreakEvent evt) {
         evt.setCancelled(true);
     }
+	
 	@EventHandler
 	public void onPlayerInteract(PlayerInteractEvent e) {
 		if (e.getAction() == Action.RIGHT_CLICK_AIR) {

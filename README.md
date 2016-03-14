@@ -9,6 +9,6 @@ Implemented:
 - Disallow block breaks
 
 TO DO
-Keep health from regenerating (Set hunger -4)
-Keep hunger from depleting
-Set teams automatically on game start
+- Keep health from regenerating (Set hunger -4)
+- Keep hunger from depleting
+- Set teams automatically on game start
