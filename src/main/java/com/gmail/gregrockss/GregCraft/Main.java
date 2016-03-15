@@ -10,7 +10,6 @@ import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -22,7 +21,8 @@ public class Main extends JavaPlugin implements Listener{
     static Server theServer;
     static World currentWorld;
     public static Plugin plugin;
-    public static final Listener MainListener = new MainListener();
+    public static final Listener HitSoundsHeadShots = new HitSoundsHeadShots();
+    public static final Listener GCBasic = new GCBasic();
     public PluginManager pluginManager;
     public static int multiplier = 2;
     public static String message = " - Headshot - ";
@@ -31,32 +31,26 @@ public class Main extends JavaPlugin implements Listener{
 		getLogger().info("onEnable has been invoked!");
 		Bukkit.getPluginManager().registerEvents(this, this);
 	    this.getCommand("kit").setExecutor(new CommandKit());
-	    //For hitsounds
 	    this.pluginManager = getServer().getPluginManager();
-	    this.pluginManager.registerEvents(MainListener, this);
+	    this.pluginManager.registerEvents(HitSoundsHeadShots, this);
+	    this.pluginManager.registerEvents(GCBasic, this);
 	    plugin = this;
 	    multiplier = getConfig().getInt("multiplier");
 	    message = getConfig().getString("message");
 	    saveDefaultConfig();
 	}
 	
-	public static void playHitSound(Player player) {
+	public static void hitSounds(Player player) {
 	    if (player != null) {
 	        player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0F, 0.5F);
 	    }
 	}
-	
+
 	@EventHandler
-    public void onPlayerBreakBlock(BlockBreakEvent evt) {
-        evt.setCancelled(true);
-    }
-	
-	@EventHandler
-	public void onPlayerInteract(PlayerInteractEvent e) {
+	public void snowballGrenades(PlayerInteractEvent e) {
 		if (e.getAction() == Action.RIGHT_CLICK_AIR) {
 			if (e.getItem().getType() == Material.SNOW_BALL) {
 				e.setCancelled(true);
-				//Player p = e.getPlayer();
 				Player p = e.getPlayer();
 				Snowball snowball = p.launchProjectile(Snowball.class);
 				p.getInventory().remove(new ItemStack(Material.SNOW_BALL, 1));

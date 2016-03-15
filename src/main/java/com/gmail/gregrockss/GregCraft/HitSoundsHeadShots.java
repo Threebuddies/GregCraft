@@ -8,14 +8,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
-public class MainListener implements Listener {
+public class HitSoundsHeadShots implements Listener {
 	
 	@EventHandler
 	public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
 	    Player damager = null;
 	    Arrow arrow = null;
 	    Boolean isArrow = Boolean.valueOf(false);
-	    //Boolean isHeadshot = Boolean.valueOf(false);
 	    
 	    if ((event.getDamager() instanceof Arrow)) {
 	        arrow = (Arrow)event.getDamager();
@@ -29,11 +28,10 @@ public class MainListener implements Listener {
 	    
 	    if ((isArrow.booleanValue()) && (arrow != null)) {
 	        if (damager != null) {
-	             Main.playHitSound(damager);
+	             Main.hitSounds(damager);
 	        }
 	        Location arrowLocation = arrow.getLocation();
 	        if (arrowLocation.getY() > event.getEntity().getLocation().getY() + 1.62D) {
-	              //isHeadshot = Boolean.valueOf(true);
 	              event.setDamage(event.getDamage() * Main.multiplier);
 	              damager.sendMessage(ChatColor.YELLOW + Main.message);
 	        }
