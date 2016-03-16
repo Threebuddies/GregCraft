@@ -14,6 +14,10 @@ Implemented:
 - Heath does not regen, hunger set to 16
 - Hunger does not regen
 - Change gamemode of player to spectate on death
+- Paper heals self
 
 TO DO
+
+- Rose paste heals other players
+- String is a claymore
 - Set teams automatically on game start

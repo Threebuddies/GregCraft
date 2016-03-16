@@ -23,6 +23,7 @@ public class Main extends JavaPlugin implements Listener{
     public static Plugin plugin;
     public static final Listener HitSoundsHeadShots = new HitSoundsHeadShots();
     public static final Listener GCBasic = new GCBasic();
+    public static final Listener Healing = new Healing();
     public PluginManager pluginManager;
     public static int multiplier = 2;
     public static String message = " - Headshot - ";
@@ -34,6 +35,7 @@ public class Main extends JavaPlugin implements Listener{
 	    this.pluginManager = getServer().getPluginManager();
 	    this.pluginManager.registerEvents(HitSoundsHeadShots, this);
 	    this.pluginManager.registerEvents(GCBasic, this);
+	    this.pluginManager.registerEvents(Healing, this);
 	    plugin = this;
 	    multiplier = getConfig().getInt("multiplier");
 	    message = getConfig().getString("message");
