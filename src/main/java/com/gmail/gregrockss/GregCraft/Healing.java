@@ -27,7 +27,6 @@ public class Healing implements Listener {
 		}
 	}	
 	
-//  Over heals
     @EventHandler
 	public void roseHealing(PlayerInteractEntityEvent e) {
 		Player playerHealed = (Player) e.getRightClicked();
