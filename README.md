@@ -15,9 +15,9 @@ Implemented:
 - Hunger does not regen
 - Change gamemode of player to spectate on death
 - Paper heals self
+- Stick heals other players
 
 TO DO
 
-- Rose paste heals other players
 - String is a claymore
 - Set teams automatically on game start

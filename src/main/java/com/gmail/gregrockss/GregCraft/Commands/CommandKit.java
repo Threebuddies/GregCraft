@@ -1,4 +1,4 @@
-package com.gmail.gregrockss.GregCraft;
+package com.gmail.gregrockss.GregCraft.Commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

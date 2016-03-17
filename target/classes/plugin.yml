@@ -1,9 +1,12 @@
 name: GregCraft
 main: com.gmail.gregrockss.GregCraft.Main
-version: 0.0.77
+version: 0.0.92
 uthor: Threebuddies
 description: CounterCraft Clone
 commands:  
   kit:
     description: Give you 20 bricks and 3 diamonds
     usage: /kit
+  basicbow:
+    description: Gives an infinity bow
+    usage: /basicbow

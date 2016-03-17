@@ -2,6 +2,7 @@ package com.gmail.gregrockss.GregCraft;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -9,6 +10,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 public class HitSoundsHeadShots implements Listener {
+	
+	public static void hitSounds(Player player) {
+	    if (player != null) {
+	        player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0F, 0.5F);
+	    }
+	}
 	
 	@EventHandler
 	public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
@@ -28,7 +35,7 @@ public class HitSoundsHeadShots implements Listener {
 	    
 	    if ((isArrow.booleanValue()) && (arrow != null)) {
 	        if (damager != null) {
-	             Main.hitSounds(damager);
+	             HitSoundsHeadShots.hitSounds(damager);
 	        }
 	        Location arrowLocation = arrow.getLocation();
 	        if (arrowLocation.getY() > event.getEntity().getLocation().getY() + 1.62D) {

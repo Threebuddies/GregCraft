@@ -7,15 +7,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 
 public class GCBasic implements Listener{
 
 	@EventHandler
-    public void playerHungerJoin(PlayerJoinEvent e) {
-		Player p = e.getPlayer();
-		p.setFoodLevel(16);
-    }
+	public void setHungerGame(PlayerMoveEvent e) {
+		e.getPlayer().setFoodLevel(16);
+	}
 	
 	@EventHandler
 	public void playerHungerMaintain(FoodLevelChangeEvent e) {
