@@ -1,6 +1,6 @@
 name: GregCraft
 main: com.gmail.gregrockss.GregCraft.Main
-version: 0.0.95
+version: 0.0.96
 uthor: Threebuddies
 description: CounterCraft Clone
 commands:  
