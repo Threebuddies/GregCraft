@@ -1,4 +1,4 @@
-package com.gmail.gregrockss.GregCraft;
+package com.gmail.gregrockss.gregcraft;
 
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;

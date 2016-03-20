@@ -1,4 +1,4 @@
-package com.gmail.gregrockss.GregCraft;
+package com.gmail.gregrockss.gregcraft;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
@@ -8,8 +8,8 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.gmail.gregrockss.GregCraft.Commands.BasicBow;
-import com.gmail.gregrockss.GregCraft.Commands.CommandKit;
+import com.gmail.gregrockss.gregcraft.commands.BasicBow;
+import com.gmail.gregrockss.gregcraft.commands.CommandKit;
 
 public class Main extends JavaPlugin implements Listener {
 
