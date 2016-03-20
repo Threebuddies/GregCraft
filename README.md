@@ -18,7 +18,8 @@ Implemented:
 - Paper heals self
 - Stick heals other players
 - String is a claymore
+- Set teams on a command
 
 TO DO
+- Set the teams without a command
 
-- Set teams automatically on round start
