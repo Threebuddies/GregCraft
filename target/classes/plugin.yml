@@ -1,6 +1,6 @@
 name: GregCraft
-main: com.gmail.gregrockss.GregCraft.Main
-version: 0.0.96
+main: com.gmail.gregrockss.gregcraft.Main
+version: 0.0.97
 uthor: Threebuddies
 description: CounterCraft Clone
 commands:  
@@ -10,3 +10,7 @@ commands:
   basicbow:
     description: Gives an infinity bow
     usage: /basicbow
+  assign:
+    description: Assign players to teams.
+  myteam:
+    description: Gets your team!

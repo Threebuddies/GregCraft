@@ -1,8 +1,16 @@
 package com.gmail.gregrockss.gregcraft;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+//import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.World;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+//import org.bukkit.command.Command;
+//import org.bukkit.command.CommandSender;
+//import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -25,10 +33,14 @@ public class Main extends JavaPlugin implements Listener {
     public static String message = " - Headshot - ";
 
 	public void onEnable() {
+		
+		Team.clearTeams();
+		
 		getLogger().info("onEnable has been invoked!");
 		Bukkit.getPluginManager().registerEvents(this, this);
 	    this.getCommand("kit").setExecutor(new CommandKit());
 	    this.getCommand("basicBow").setExecutor(new BasicBow());
+
 	    this.pluginManager = getServer().getPluginManager();
 	    this.pluginManager.registerEvents(HitSoundsHeadShots, this);
 	    this.pluginManager.registerEvents(GCBasic, this);
@@ -39,8 +51,30 @@ public class Main extends JavaPlugin implements Listener {
 	    message = getConfig().getString("message");
 	    saveDefaultConfig();
 	}
+
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		if(label.equalsIgnoreCase("assign")) {
+			int i = 0;
+			for(Player player : Bukkit.getOnlinePlayers()) {
+				if(i < Bukkit.getOnlinePlayers().size() / 2) {
+					Team.addToTeam(TeamType.RED, player);
+				} else {
+					Team.addToTeam(TeamType.BLUE, player);
+				}
+				i++;
+			}
+		}
+		if(label.equalsIgnoreCase("myteam"))
+			if (!(sender instanceof Player)) {
+				sender.sendMessage(ChatColor.RED + "This command can only be run by a player.");
+			} else {
+				sender.sendMessage(Team.getTeamType(((Player)sender)).name());
+			}
+		return true;
+	}
 	
 	public void onDisable() {
 		getLogger().info("onDisable has been invoked!");
+		Team.clearTeams();
 	}
 }
