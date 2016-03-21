@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 public class Team {
 
@@ -49,6 +51,18 @@ public class Team {
 		combinedTeams.addAll(blueTeam);
 		return combinedTeams;
 	}
+	
+	/* Does not work?
+	@EventHandler
+	public void onEntityDamageByentity(EntityDamageByEntityEvent e) {
+
+		Player player = (Player) e.getEntity();
+		Player damager = (Player) e.getDamager();
+		
+		if(Team.getTeamType(player) == Team.getTeamType(damager))
+			e.setCancelled(true);
+	}
+	*/
 	
 	public static TeamType getTeamType(Player player) {
 		if(!isInTeam(player))

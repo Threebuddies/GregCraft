@@ -1,0 +1,22 @@
+300 credits on start
+
+basic bow 100
+power 1 450
+flame 550
+power 2 800
+auto 850
+
+grenade 300
+flashbang 200
+
+cobweb trap 150
+claymore 250
+
+bandage 200
+medkit 250
+
+helmet 150
+blast protection 150
+chain chestpiece 150
+
+advanced defuse kit 100

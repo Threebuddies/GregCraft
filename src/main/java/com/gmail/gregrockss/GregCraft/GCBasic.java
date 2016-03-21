@@ -1,10 +1,12 @@
 package com.gmail.gregrockss.gregcraft;
 
 import org.bukkit.GameMode;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -22,9 +24,22 @@ public class GCBasic implements Listener{
 	}
 	
 	@EventHandler
-    public void disableBlockBreak(BlockBreakEvent e) {
-        e.setCancelled(true);
+    public void blockBreak(BlockBreakEvent e) {
+		if(e.getBlock().getType() == (Material.TNT)) {
+			e.setCancelled(false);
+		} else {
+			e.setCancelled(true);
+		}
     }
+	
+	@EventHandler
+	public void blockPlacing(BlockPlaceEvent e) {
+		if(e.getBlockPlaced().getType() == (Material.TNT)) {
+			e.setCancelled(false);
+		} else {
+			e.setCancelled(true);
+		}
+	}
 
 	@EventHandler
 	public void onDeath(PlayerDeathEvent e) {
