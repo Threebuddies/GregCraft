@@ -40,7 +40,7 @@ public class GCBasic implements Listener{
 			e.setCancelled(true);
 		}
 	}
-
+	
 	@EventHandler
 	public void onDeath(PlayerDeathEvent e) {
 		Player p = e.getEntity();
