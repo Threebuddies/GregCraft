@@ -32,6 +32,15 @@ public class Main extends JavaPlugin implements Listener {
 		
 		Team.clearTeams();
 		
+        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+            @Override
+            public void run() {
+            	for (World world : Main.this.getServer().getWorlds()) {
+            		world.setTime(6000);
+            	}	
+            }
+        }, 0L, 300L);
+		
 		getLogger().info("onEnable has been invoked!");
 		Bukkit.getPluginManager().registerEvents(this, this);
 	    this.getCommand("kit").setExecutor(new CommandKit());
