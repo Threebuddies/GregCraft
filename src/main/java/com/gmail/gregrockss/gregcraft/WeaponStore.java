@@ -17,32 +17,39 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class WeaponStore implements Listener {
 	
 	public void openGUI(Player player) {
-		Inventory inv = Bukkit.createInventory(null, 9, ChatColor.DARK_GREEN + "Server Selector");
-		ItemStack survival = new ItemStack (Material.DIAMOND_CHESTPLATE);
-		ItemMeta survivalMeta = survival.getItemMeta();
-		ItemStack creative = new ItemStack (Material.DIAMOND_BOOTS);
-		ItemMeta creativeMeta = creative.getItemMeta();
-		ItemStack spectator = new ItemStack (Material.DIAMOND_LEGGINGS);
-		ItemMeta spectatorMeta = spectator.getItemMeta();
-		ItemStack adventure = new ItemStack (Material.DIAMOND_HELMET);
-		ItemMeta adventureMeta = adventure.getItemMeta();
+		Inventory inv = Bukkit.createInventory(null, 54, ChatColor.DARK_GREEN + "Server Selector");
 		
-		survivalMeta.setDisplayName(ChatColor.DARK_RED + "Survival");
-		survival.setItemMeta(survivalMeta);
+		// Declare ItemStacks and ItemMeta
+		ItemStack basic = new ItemStack (Material.BOW);
+		ItemMeta basicMeta = basic.getItemMeta();
 		
-		creativeMeta.setDisplayName(ChatColor.GREEN + "Creative");
-		creative.setItemMeta(creativeMeta);
+		ItemStack powerOne = new ItemStack (Material.BOW);
+		ItemMeta powerOneMeta = powerOne.getItemMeta();
 		
-		spectatorMeta.setDisplayName(ChatColor.BLUE + "Spectator");
-		spectator.setItemMeta(spectatorMeta);
+		ItemStack flame = new ItemStack (Material.DIAMOND_LEGGINGS);
+		ItemMeta flameMeta = flame.getItemMeta();
 		
-		adventureMeta.setDisplayName(ChatColor.YELLOW + "Adventure");
-		adventure.setItemMeta(adventureMeta);
+		ItemStack powerTwo = new ItemStack (Material.DIAMOND_HELMET);
+		ItemMeta powerTwoMeta = powerTwo.getItemMeta();
 		
-		inv.setItem(1, survival);
-		inv.setItem(3, creative);
-		inv.setItem(5, spectator);
-		inv.setItem(7, adventure);
+		// Set the display name and ItemData
+		basicMeta.setDisplayName(ChatColor.DARK_RED + "Basic Bow");
+		basic.setItemMeta(basicMeta);
+		
+		powerOneMeta.setDisplayName(ChatColor.GREEN + "Power I");
+		powerOne.setItemMeta(powerOneMeta);
+		
+		flameMeta.setDisplayName(ChatColor.BLUE + "Flame");
+		flame.setItemMeta(flameMeta);
+		
+		powerTwoMeta.setDisplayName(ChatColor.YELLOW + "Power II ");
+		powerTwo.setItemMeta(powerTwoMeta);
+		
+		// Place items in the inventory
+		inv.setItem(0, basic);
+		inv.setItem(8, powerOne);
+		inv.setItem(17, flame);
+		inv.setItem(26, powerTwo);
 		
 		player.openInventory(inv);
 	}
@@ -60,8 +67,7 @@ public class WeaponStore implements Listener {
 		}
 		
 		switch (e.getCurrentItem().getType()) {
-		case DIAMOND_CHESTPLATE:
-			//this is where the player should get the items/take money away
+		case BOW:
 			player.sendMessage(ChatColor.GREEN + "Survival Selected");
 			break;
 		case DIAMOND_BOOTS:
@@ -83,7 +89,9 @@ public class WeaponStore implements Listener {
 	}
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
-		e.getPlayer().getInventory().addItem(new ItemStack(Material.COMPASS));
+		Inventory joinInv = e.getPlayer().getInventory();
+		joinInv.clear();
+		joinInv.addItem(new ItemStack(Material.COMPASS));
 	}
 	
 	@EventHandler
