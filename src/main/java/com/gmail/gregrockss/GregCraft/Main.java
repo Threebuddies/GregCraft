@@ -24,6 +24,8 @@ public class Main extends JavaPlugin implements Listener {
     public static final Listener GCBasic = new GCBasic();
     public static final Listener Healing = new Healing();
     public static final Listener Explosives = new Explosives();
+    //public static final Listener Team = new Team();
+    public static final Listener WeaponStore= new WeaponStore();
     public PluginManager pluginManager;
     public static int multiplier = 2;
     public static String message = " - Headshot - ";
@@ -51,6 +53,8 @@ public class Main extends JavaPlugin implements Listener {
 	    this.pluginManager.registerEvents(GCBasic, this);
 	    this.pluginManager.registerEvents(Healing, this);
 	    this.pluginManager.registerEvents(Explosives, this);
+	    //this.pluginManager.registerEvents(Team, this);
+	    this.pluginManager.registerEvents(WeaponStore, this);
 	    plugin = this;
 	    multiplier = getConfig().getInt("multiplier");
 	    message = getConfig().getString("message");
