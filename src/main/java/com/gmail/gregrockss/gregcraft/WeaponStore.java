@@ -54,7 +54,7 @@ public class WeaponStore implements Listener {
 		//ItemStack webDisplay = new ItemStack (Material.WEB);
 		ItemStack web = new ItemStack (Material.WEB);
 		ItemMeta webMeta = web.getItemMeta();
-		ItemStack tripwire = new ItemStack (Material.STRING);
+		ItemStack tripwire = new ItemStack (Material.STONE_PLATE);
 		ItemMeta tripwireMeta = tripwire.getItemMeta();
 		webMeta.setDisplayName("Spider Web");
 		web.setItemMeta(webMeta);
@@ -177,7 +177,7 @@ public class WeaponStore implements Listener {
 			return;
 		}
 		if(display == "Land Mine") {
-			ItemStack string = new ItemStack (Material.STRING);
+			ItemStack string = new ItemStack (Material.STONE_PLATE);
 			p.getInventory().addItem(string);
 			p.sendMessage(ChatColor.GREEN + "Land Mine added to your inventory!");
 			return;

@@ -34,10 +34,13 @@ public class GCBasic implements Listener{
 	
 	@EventHandler
 	public void blockPlacing(BlockPlaceEvent e) {
-		if(e.getBlockPlaced().getType() == (Material.TNT) || e.getBlockPlaced().getType() == (Material.TRIPWIRE)) {
+		e.setCancelled(true);
+		if(e.getBlockPlaced().getType() == (Material.TNT)) {
 			e.setCancelled(false);
-		} else {
-			e.setCancelled(true);
+		}
+		if(e.getBlockPlaced().getType() == (Material.STONE_PLATE)) {
+			e.setCancelled(false);
+			e.getBlockPlaced().setType(Material.TRIPWIRE);
 		}
 	}
 	
