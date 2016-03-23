@@ -12,9 +12,6 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.gmail.gregrockss.gregcraft.commands.BasicBow;
-import com.gmail.gregrockss.gregcraft.commands.CommandKit;
-
 public class Main extends JavaPlugin implements Listener {
 
     static Server theServer;
@@ -42,11 +39,9 @@ public class Main extends JavaPlugin implements Listener {
             	}	
             }
         }, 0L, 300L);
-		
-		getLogger().info("onEnable has been invoked!");
+
 		Bukkit.getPluginManager().registerEvents(this, this);
-	    this.getCommand("kit").setExecutor(new CommandKit());
-	    this.getCommand("basicBow").setExecutor(new BasicBow());
+	    //this.getCommand("kit").setExecutor(new CommandKit());
 
 	    this.pluginManager = getServer().getPluginManager();
 	    this.pluginManager.registerEvents(HitSoundsHeadShots, this);
@@ -83,7 +78,6 @@ public class Main extends JavaPlugin implements Listener {
 	}
 	
 	public void onDisable() {
-		getLogger().info("onDisable has been invoked!");
 		Team.clearTeams();
 	}
 }

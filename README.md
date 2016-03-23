@@ -16,6 +16,7 @@ Implemented:
 - Stick heals other players
 - String is a claymore
 - Set teams on a command
+- Item Shop setup
 
 TO DO
 - Set the teams without a command

@@ -34,7 +34,7 @@ public class GCBasic implements Listener{
 	
 	@EventHandler
 	public void blockPlacing(BlockPlaceEvent e) {
-		if(e.getBlockPlaced().getType() == (Material.TNT)) {
+		if(e.getBlockPlaced().getType() == (Material.TNT) || e.getBlockPlaced().getType() == (Material.TRIPWIRE)) {
 			e.setCancelled(false);
 		} else {
 			e.setCancelled(true);

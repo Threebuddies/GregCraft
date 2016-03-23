@@ -22,7 +22,7 @@ public class Explosives implements Listener {
 				Player p = e.getPlayer();
 				Snowball snowball = p.launchProjectile(Snowball.class);
 				p.getInventory().remove(new ItemStack(Material.SNOW_BALL, 1));
-				snowball.setVelocity(p.getLocation().getDirection().normalize().multiply(2));
+				snowball.setVelocity(p.getLocation().getDirection().normalize().multiply(1));
 				return;	
 			} 
 		}

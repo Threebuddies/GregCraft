@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-//import org.bukkit.event.EventHandler;
-//import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 public class Team implements Listener {
 
@@ -53,7 +53,6 @@ public class Team implements Listener {
 		return combinedTeams;
 	}
 	
-	/* Does not work?
 	@EventHandler
 	public void onEntityDamageByentity(EntityDamageByEntityEvent e) {
 
@@ -63,7 +62,6 @@ public class Team implements Listener {
 		if(Team.getTeamType(player) == Team.getTeamType(damager))
 			e.setCancelled(true);
 	}
-	*/
 	
 	public static TeamType getTeamType(Player player) {
 		if(!isInTeam(player))
