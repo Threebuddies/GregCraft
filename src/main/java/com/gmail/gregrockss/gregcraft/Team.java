@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
-public class Team implements Listener {
+public class Team {
 
 	private static List<String> redTeam = new ArrayList<String>();
 	private static List<String> blueTeam = new ArrayList<String>();

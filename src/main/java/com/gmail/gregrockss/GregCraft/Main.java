@@ -41,7 +41,7 @@ public class Main extends JavaPlugin implements Listener {
         }, 0L, 300L);
 
 		Bukkit.getPluginManager().registerEvents(this, this);
-	    //this.getCommand("kit").setExecutor(new CommandKit());
+	    //this.getCommand("kit").setExecutor(new com.gmail.gregrockss.gregcraft.commands.Team());
 
 	    this.pluginManager = getServer().getPluginManager();
 	    this.pluginManager.registerEvents(HitSoundsHeadShots, this);
