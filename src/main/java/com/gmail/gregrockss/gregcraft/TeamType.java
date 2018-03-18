@@ -1,4 +1,4 @@
-package com.gmail.gregrockss.gregcraft;
+package com.gmail.gregrockss.GregCraft;
 
 public enum TeamType {
 	RED, BLUE

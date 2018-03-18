@@ -1,4 +1,4 @@
-package com.gmail.gregrockss.gregcraft;
+package com.gmail.gregrockss.GregCraft;
 
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -42,6 +42,8 @@ public class GCBasic implements Listener{
 			e.setCancelled(false);
 			e.getBlockPlaced().setType(Material.TRIPWIRE);
 		}
+		if(e.getBlockPlaced().getType() == (Material.WEB));
+			e.setCancelled(false);
 	}
 	
 	@EventHandler

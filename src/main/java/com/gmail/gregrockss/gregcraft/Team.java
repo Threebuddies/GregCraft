@@ -1,4 +1,4 @@
-package com.gmail.gregrockss.gregcraft;
+package com.gmail.gregrockss.GregCraft;
 
 import java.util.ArrayList;
 import java.util.List;

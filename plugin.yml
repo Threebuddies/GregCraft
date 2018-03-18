@@ -1,7 +1,7 @@
 name: GregCraft
-main: com.gmail.gregrockss.gregcraft.Main
+main: com.gmail.gregrockss.GregCraft.Main
 version: 0.0.98
-uthor: Threebuddies
+author: Threebuddies
 description: CounterCraft Clone
 commands:  
   kit:
