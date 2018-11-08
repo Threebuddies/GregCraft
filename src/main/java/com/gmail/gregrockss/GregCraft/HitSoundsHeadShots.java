@@ -9,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
+// This code is most likely from murderscene
 public class HitSoundsHeadShots implements Listener {
 	
 	public static void hitSounds(Player player) {

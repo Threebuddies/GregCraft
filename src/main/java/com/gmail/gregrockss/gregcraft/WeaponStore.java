@@ -20,7 +20,7 @@ public class WeaponStore implements Listener {
 	public void openGUI(Player player) {
 		Inventory inv = Bukkit.createInventory(null, 54, "Store");
 		
-		// This block is for all they types of bows
+		// This code block is for all they types of bows
 		//ItemStack bow = new ItemStack (Material.BOW);
 		ItemStack basic = new ItemStack (Material.BOW);
 		ItemMeta basicMeta = basic.getItemMeta();
@@ -39,7 +39,7 @@ public class WeaponStore implements Listener {
 		powerTwoMeta.setDisplayName("Power II Bow Kit");
 		powerTwo.setItemMeta(powerTwoMeta);
 		
-		// This block is for thrown explosives
+		// This code block is for thrown explosives
 		//ItemStack tnt = new ItemStack (Material.TNT);
 		ItemStack grenade = new ItemStack (Material.ENDER_PEARL);
 		ItemMeta grenadeMeta = grenade.getItemMeta();
@@ -50,7 +50,7 @@ public class WeaponStore implements Listener {
 		flashbangMeta.setDisplayName("Flashbang");
 		flashbang.setItemMeta(flashbangMeta);
 		
-		// This block is for traps
+		// This code block is for traps
 		//ItemStack webDisplay = new ItemStack (Material.WEB);
 		ItemStack web = new ItemStack (Material.WEB);
 		ItemMeta webMeta = web.getItemMeta();
@@ -61,7 +61,7 @@ public class WeaponStore implements Listener {
 		tripwireMeta.setDisplayName("Land Mine");
 		tripwire.setItemMeta(tripwireMeta);
 		
-		// This block is for healing
+		// This code block is for healing
 		//ItemStack health = new ItemStack (Material.PAPER);
 		ItemStack bandage = new ItemStack (Material.PAPER);
 		ItemMeta bandageMeta = bandage.getItemMeta();
@@ -72,7 +72,7 @@ public class WeaponStore implements Listener {
 		healthKitMeta.setDisplayName("Health Kit");
 		healthKit.setItemMeta(healthKitMeta);
 		
-		// This block is for armor
+		// This code block is for armor
 		//ItemStack diamondChest = new ItemStack (Material.DIAMOND_CHESTPLATE);
 		ItemStack helmet = new ItemStack (Material.LEATHER_HELMET);
 		ItemMeta helmetMeta = helmet.getItemMeta();
@@ -87,7 +87,7 @@ public class WeaponStore implements Listener {
 		chainArmorMeta.setDisplayName("Chainmail Chestplate");
 		chainArmor.setItemMeta(chainArmorMeta);
 		
-		// Makes the interface
+		// Creates the interface in an inventory, then creates it
 		//inv.setItem(0, bow);
 		inv.setItem(0, basic);
 		inv.setItem(9, powerOne);
@@ -109,7 +109,8 @@ public class WeaponStore implements Listener {
 		
 		player.openInventory(inv);
 	}
-
+	
+	
 	@EventHandler
 	public void onInventoryClick(InventoryClickEvent e) {
 		if(!ChatColor.stripColor(e.getInventory().getName()).equalsIgnoreCase("Store"))
@@ -127,6 +128,7 @@ public class WeaponStore implements Listener {
 		ItemStack arrow = new ItemStack(Material.ARROW, 1);
 		String display = e.getCurrentItem().getItemMeta().getDisplayName();
 		
+		// When a player clicks on an object, add the items to the players inventory
 		if(display == "Basic Bow Kit") {
 			ItemStack basic = new ItemStack (Material.BOW);
 			basic.addEnchantment(Enchantment.ARROW_INFINITE, 1);
@@ -214,15 +216,18 @@ public class WeaponStore implements Listener {
 			return;
 		}
 	}
-		
+	
+	// When a player joins the server, add the navigation menu item to the task bar
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
 		Inventory joinInv = e.getPlayer().getInventory();
 		joinInv.clear();
 		joinInv.addItem(new ItemStack(Material.COMPASS));
+		// Wooden sword is for combat use
 		joinInv.addItem(new ItemStack(Material.WOOD_SWORD));
 	}
 	
+	// Opens the store when a player clicks while holding a compass
 	@EventHandler
 	public void onPlayerInteract(PlayerInteractEvent e) {
 		Action a = e.getAction();
